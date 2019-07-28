@@ -1,44 +1,233 @@
 {% extends "layout.html" %} {% block title %} Introduction {% endblock title %} {% block content %}
+<style>
+    .flip3D1 {
+        align-self: center;
+        width: 400px;
+        height: 300px;
+        margin: 50px;
+        float: left;
+    }
+    
+    .flip3D1>.front {
+        position: absolute;
+        -webkit-transform: perspective( 600px) rotateY( 0deg);
+        transform: perspective( 600px) rotateY( 0deg);
+        background: mistyrose;
+        width: 400px;
+        height: 300px;
+        border-radius: 7px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: -webkit-transform .5s linear 0s;
+        transition: transform .5s linear 0s;
+    }
+    
+    .flip3D1>.back {
+        position: absolute;
+        -webkit-transform: perspective( 600px) rotateY( 180deg);
+        transform: perspective( 600px) rotateY( 180deg);
+        background: #80BFFF;
+        width: 400px;
+        height: 300px;
+        border-radius: 7px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: -webkit-transform .5s linear 0s;
+        transition: transform .5s linear 0s;
+    }
+    
+    .flip3D1:hover>.front {
+        -webkit-transform: perspective( 600px) rotateY( -180deg);
+        transform: perspective( 600px) rotateY( -180deg);
+    }
+    
+    .flip3D1:hover>.back {
+        -webkit-transform: perspective( 600px) rotateY( 0deg);
+        transform: perspective( 600px) rotateY( 0deg);
+    }
+</style>
 
-<p style="font-size: 200%;color: crimson; text-align:justify">Welcome to zombie world!!!!</p>
-<p style="font-style: italic;color: darkviolet; font-size: 100%; text-align:justify">A Zombie, in its broadest sense, is a person who has lost his or her sense of self-awareness and identity, and cares only for the destruction (and often consumption) of any human around, no matter what the circumstances, or cost to his or her self. They
-    make up for this loss of intelligence in sheer numbers, as the state of 'Zombieism' is almost always contagious, and spread virually,at a devastating cost to their surrounding society. Technically speaking, true zombies are always dead,and re-animated.</p>
-<p style="font-style: italic;color:crimson ; font-size: 150%; text-align:justify">Types of Zombies:-</p>
-<p style="font-style: italic;color:deeppink; font-size: 100%; text-align:justify">The Generic Zombie:-<br>
-    <img src="https://wallpaperplay.com/walls/full/9/c/b/261485.jpg" height="150" width="290"></img><br>The Generic Zombie, is a person who has been killed and reanimated by a pathogen, often, but not always due to a virus.They are usually aggressive.
-    They can be curious, but disorientated,and at a loss to fully understand their environment. Their most notable trait is that they kill and eat uninfected humans.
-</p>
-<p style="font-style: italic;color:deeppink; font-size: 100%" ; text-align:justify>Runner Zombies:-<br>
-    <img src="https://zamonthly.files.wordpress.com/2013/02/28weeks.jpg" height="150" width="290"></img><br>Runner Zombies are Zombies that have the ability to run at a full sprint.This ability separates them (in dealing with them, and in classification)
-    so much, that leading minds disagree whether they should even be considered Zombies at all.
-</p>
-<p style="font-style: italic;color:deeppink; font-size: 100%; text-align:justify">Pukers/Vomiters Zombies:-<br>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsXiZXvUmWfHcilYJHYOn-4n287as5nyURt9l9lXWjUzqrDL5q" height="150" width="290"></img><br>Vomiters or Pukers are related to Spitters in that they are one of the few zombies with a ranged
-    attack: in this case, vomiting. The range of the vomit depends on the type of zombie, from just being able to vomit off a roof below to massive range. Vomit tends not to do any damage, it's primary function is to infect if it is not dealt with quickly.
-    It also has a secondary function, being very irritating if it gets into the eyes or mouth of the survivors. Beware when you look up.The Vomiter Zombies' clothes are usually drenched in vomit and are mutated for the purpose of vomiting, making them
-    weak, slow, and visible.They usually also make belching and vomiting ambient noises when nearby.
-</p>
-<p style="font-style: italic;color:darkblue; font-size: 150%; text-align:justify">The zombies can be scary from the ones in the game<br> <strong>PLANST V/S ZOMBIES</strong><br><img src="https://i.pinimg.com/236x/37/15/8b/37158b1fcb232198230c913250993ab2--hunting-pictures-plant-zombie.jpg" height="150" width="290"></img> to the ones
-    in <br><strong>DEAD SNOW</strong><br>
-    <img src="https://i.ytimg.com/vi/kps8in5nFbI/maxresdefault.jpg" height="150" width="290"></img>
-</p>
-<p style="font-style: italic;color:darkblue; font-size: 150%; text-align:justify">But all zombies are not Evil some are <strong>Romantic</strong> too like the ones in <br><strong>WARM BODIES</strong><br><img src="https://steemitimages.com/640x0/http://rs1173.pbsrc.com/albums/r584/Cloudy_vt/407321_282481361808701_281863641870473_748947_1723201358_n_large.jpg?w=480&h=480&fit=clip"
-        height="150" width="290"></img>
-</p>
-<p style="font-style: italic;color:darkblue; font-size: 100%; text-align:justify"><strong>  Tips to survive a zombie apocalyps:-</strong><br>
-    <br>
-    <ul style="font-style:italic;color:crimson; font-size: 100%; text-align:justify">
-        <strong> <li>They are fatal stay as away as possible.
-                <li>Use closed transportation like car and check for the fuel. 
-                    <li>Stick together.
-                        <li>Take chelter in closed places.
-                            <li>Preferably stay at the roof of a high rise.
-                            <li>Seal all possible entry points.
-                                <li>Fight zombies with longe range weapons.
-                                    <li>Whlie in a fight do not split.
-                    </strong>
-    </ul>
+<style>
+    .flip3D2 {
+        align-self: center;
+        width: 400px;
+        height: 300px;
+        margin: 50px;
+        float: left;
+    }
+    
+    .flip3D2>.front {
+        position: absolute;
+        -webkit-transform: perspective( 600px) rotateY( 0deg);
+        transform: perspective( 600px) rotateY( 0deg);
+        background: mistyrose;
+        width: 500px;
+        height: 300px;
+        border-radius: 7px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: -webkit-transform .5s linear 0s;
+        transition: transform .5s linear 0s;
+    }
+    
+    .flip3D2>.back {
+        position: absolute;
+        -webkit-transform: perspective( 600px) rotateY( 180deg);
+        transform: perspective( 600px) rotateY( 180deg);
+        background: #80BFFF;
+        width: 500px;
+        height: 300px;
+        border-radius: 7px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: -webkit-transform .5s linear 0s;
+        transition: transform .5s linear 0s;
+    }
+    
+    .flip3D2:hover>.front {
+        -webkit-transform: perspective( 600px) rotateY( -180deg);
+        transform: perspective( 600px) rotateY( -180deg);
+    }
+    
+    .flip3D2:hover>.back {
+        -webkit-transform: perspective( 600px) rotateY( 0deg);
+        transform: perspective( 600px) rotateY( 0deg);
+    }
+</style>
 
-</p>
+<style>
+    .flip3D {
+        width: 240px;
+        height: 200px;
+        margin: 50px;
+        float: left;
+    }
+    
+    .flip3D>.front {
+        position: absolute;
+        -webkit-transform: perspective( 600px) rotateY( 0deg);
+        transform: perspective( 600px) rotateY( 0deg);
+        background: mistyrose;
+        width: 240px;
+        height: 200px;
+        border-radius: 7px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: -webkit-transform .5s linear 0s;
+        transition: transform .5s linear 0s;
+    }
+    
+    .flip3D>.back {
+        position: absolute;
+        -webkit-transform: perspective( 600px) rotateY( 180deg);
+        transform: perspective( 600px) rotateY( 180deg);
+        background: #80BFFF;
+        width: 240px;
+        height: 200px;
+        border-radius: 7px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: -webkit-transform .5s linear 0s;
+        transition: transform .5s linear 0s;
+    }
+    
+    .flip3D:hover>.front {
+        -webkit-transform: perspective( 600px) rotateY( -180deg);
+        transform: perspective( 600px) rotateY( -180deg);
+    }
+    
+    .flip3D:hover>.back {
+        -webkit-transform: perspective( 600px) rotateY( 0deg);
+        transform: perspective( 600px) rotateY( 0deg);
+    }
+</style>
+
+<div class="flip3D1" style="align-content: center">
+    <div class="front " style="font-size: 200%;color: crimson; text-align:justify">Welcome to zombie world!!!!
+        <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyncLyJupAe80QChXFvmRxcmimY3ad3Xun6XSwwktzTc_ycafJ " height="300 " width="400 "></img>
+    </div>
+    <div class="back ">
+        <p>A Zombie, in its broadest sense, is a person who has lost his or her sense of self-awareness and identity, and cares only for the destruction (and often consumption) of any human around, no matter what the circumstances, or cost to his or her self. They
+            make up for this loss of intelligence in sheer numbers, as the state of 'Zombieism' is almost always contagious, and spread virually,at a devastating cost to their surrounding society. Technically speaking, true zombies are always dead,and re-animated.</p>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<hr>
+<p style="font-style: italic;color:crimson ; font-size: 150%; text-align:justify ">Types of Zombies:-</p>
+<div class="flip3D ">
+    <div class="front " style="font-style: italic;color:deeppink; font-size: 150%; text-align:justify ">The Generic Zombie:-
+        <p><img src="https://wallpaperplay.com/walls/full/9/c/b/261485.jpg " height="150 " width="240 "></img>
+        </p>
+    </div>
+    <div class="back ">
+        <p>The Generic Zombie, is a person who has been killed and reanimated by a pathogen, often, but not always due to a virus.They are usually aggressive. They can be curious, but disorientated,and at a loss to fully understand their environment. Their
+            most notable trait is that they kill and eat uninfected humans.</p>
+    </div>
+</div>
+ 
+<div class="flip3D ">
+    <div class="front " style="font-style: italic;color:deeppink; font-size: 150%; text-align:justify ">Runner Zombies:-
+        <p><img src="https://zamonthly.files.wordpress.com/2013/02/28weeks.jpg " height="150 " width="240 "></img>
+        </p>
+    </div>
+    <div class="back ">
+        <p>Runner Zombies are Zombies that have the ability to run at a full sprint.This ability separates them (in dealing with them, and in classification) so much, that leading minds disagree whether they should even be considered Zombies at all.</p>
+    </div>
+</div>
+
+
+<div class="flip3D ">
+    <div class="front " style="font-style: italic;color:deeppink; font-size: 150%; text-align:justify ">Pukers/Vomiters:-
+        <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsXiZXvUmWfHcilYJHYOn-4n287as5nyURt9l9lXWjUzqrDL5q " height="150 " width="240 "></img>
+        </p>
+    </div>
+    <div class="back ">
+        <p>Vomiters or Pukers are related to Spitters in that they are one of the few zombies with a ranged attack: in this case, vomiting. The range of the vomit depends on the type of zombie, from just being able to vomit off a roof below to massive range.
+            Vomit tends not to do any damage, it's primary function is to infect if it is not dealt with quickly.</p>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+
+<div class="flip3D ">
+    <div class="front " style="font-style: italic;color:darkblue; font-size: 150%; text-align:justify ">The zombies can be scary from the ones in the game PLANST V/S ZOMBIES to the ones
+        in DEAD SNOW.
+    </div>
+    <div class="back ">
+    <div><img src="https://i.pinimg.com/236x/37/15/8b/37158b1fcb232198230c913250993ab2--hunting-pictures-plant-zombie.jpg " height="195 " width="120 "/><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT45p-2XZgF1qqdrEX04-bAl06kbw5oXyHw8god8Oro6h9XZxR1
+            " height="195 " width="120 "/></div>
+    </div>
+</div>
+<div class="flip3D ">
+    <div class="front " style="font-style: italic;color:darkblue; font-size: 150%; text-align:justify ">But all zombies are not Evil some are <strong>Romantic</strong> too like the ones in <strong>WARM BODIES.</strong>
+    </div>
+    <div class="back ">
+    <img src="https://steemitimages.com/640x0/http://rs1173.pbsrc.com/albums/r584/Cloudy_vt/407321_282481361808701_281863641870473_748947_1723201358_n_large.jpg?w=480&h=480&fit=clip "
+    height="195 " width="240 "/>
+    </div>
+</div>
+  
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+
+
+<div class="flip3D2 ">
+    <div class="front " style="font-style: italic;color:darkblue; font-size: 150%; text-align:justify "><strong>  Tips to survive a zombie apocalyps:-</strong><br>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoyoDooUEZW-HPcjXqvX3UYmdRhFx5ixxBpcHu4MHgY483r0aTw "
+        height="280 " width="500 "/>
+    </div>
+    <div class="back ">
+            <ul style="font-style:italic;color:crimson; font-size: 150%; text-align:justify ">
+                    <strong> <li>They are fatal stay as away as possible.
+                            <li>Use closed transportation like car and check for the fuel. 
+                                <li>Stick together and take shelter preferably at the roof of a high rise.
+                                        <li>Seal all possible entry points.
+                                            <li>Fight zombies with longe range weapons.
+                                </strong>
+                </ul>
+    
+    </div>
+</div>
 
 {% endblock %}
